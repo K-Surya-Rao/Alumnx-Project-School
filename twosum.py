@@ -33,7 +33,7 @@ class TwoSumResponse(BaseModel):
     algorithm: str =Field(default="Hash Map 0(n)", description="Algorithm used")
 
 #algo implementation
-def solve_two_sum (nums: List[int], target:int)->optional [List[int]]:
+def solve_two_sum (nums: List[int], target:int)->Optional [List[int]]:
     hash_map = {}
     for i, num in enumerate(nums):
         complement = target-num
@@ -47,7 +47,7 @@ def solve_two_sum (nums: List[int], target:int)->optional [List[int]]:
 
 #API endpoints
 
-app.get("/")
+@app.get("/")
 def home():
     return {
          "message": "Two Sum API - Solve DSA problems via REST",
