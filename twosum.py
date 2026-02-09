@@ -68,6 +68,22 @@ def home():
         }
     }
 
+@app.get("/")
+def home():
+    return {"message": "Two Sum API running"}
+
+@app.head("/")
+def head_root():
+    return
+
+@app.get("/health")
+def health():
+    return {"status": "healthy"}
+
+@app.head("/health")
+def health_head():
+    return
+
 
 @app.post("/twosum", response_model=TwoSumResponse)
 def two_sum_endpoint(request: TwoSumRequest):
@@ -102,7 +118,7 @@ def two_sum_endpoint(request: TwoSumRequest):
     # Validate input
     if len(request.nums) < 2:
         raise HTTPException(
-            status_code=400,
+            
             detail="Array must have at least 2 numbers"
         )
     
