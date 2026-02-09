@@ -130,14 +130,6 @@ def two_sum_endpoint(request: TwoSumRequest):
         )
 
 
-@app.get("/health")
-def health():
-    """Health check endpoint"""
-    return {
-        "status": "healthy",
-        "service": "Two Sum API",
-        "version": "1.0.0"
-    }
 
 
 # Run the server
